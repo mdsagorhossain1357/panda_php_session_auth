@@ -60,11 +60,10 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
     <div class="col-6 offset-md-3">
 
     <?php if($messageText != ""){ ?>
-        <div class="alert alert-success <?php echo $messageType ?> my-2" role="alert">
+        <div class="alert alert-danger <?php echo $messageType ?> my-2" role="alert">
         <?php echo $messageText ?>
         </div>
         <?php } ?>
-
 
 
         <form method="POST" action="">

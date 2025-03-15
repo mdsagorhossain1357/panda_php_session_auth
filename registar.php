@@ -26,15 +26,13 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
     
 // validation
     if (empty($email) || empty($password)) {
-        echo $email, $password;
-        $message = "All Fields are required";
+        // echo $email, $password; //এটি পাসওয়ার্ড বা ইমেইল প্রিন্ট করে
+        $messageText = "All Fields are required";
         $messageType = "danger";
     }
     else{
         $_SESSION ["users"][$email] = $password;
-$messageText = "Registration Success & you can login now";
-$messageType = "Success";
-header("Location: login.php");
+        header("Location: login.php");
     }
 
 }
@@ -49,7 +47,7 @@ header("Location: login.php");
     <div class="col-6 offset-md-3">
 
     <?php if($messageText != ""){ ?>
-        <div class="alert alert-success <?php echo $messageType ?> my-2" role="alert">
+        <div class="alert alert-danger <?php echo $messageType ?> my-2" role="alert">
         <?php echo $messageText ?>
         </div>
         <?php } ?>
